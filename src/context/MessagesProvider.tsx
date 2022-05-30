@@ -11,7 +11,7 @@ export interface MessageInterface {
   from: string
   text: string
   type: MessageType
-  time: string
+  time: number
 }
 
 interface MessageContextInterface {

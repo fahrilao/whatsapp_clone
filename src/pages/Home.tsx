@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
+import { FC } from 'react'
 import { Main } from '../components/Main'
 import { Sidenav } from '../components/Sidenav'
 
@@ -8,6 +8,7 @@ interface HomeProps {
 }
 
 export const Home: FC<HomeProps> = ({ id, onLogout }) => {
+  
   return (
     <div className="container">
       <Sidenav id={id} onLogout={onLogout} />

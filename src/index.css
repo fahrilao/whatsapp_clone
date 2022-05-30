@@ -80,7 +80,7 @@ li {
 }
 
 .card-header_name {
-  font-size: 1.3em;
+  font-size: 1.1em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -94,7 +94,7 @@ li {
 }
 
 .card-footer {
-  font-size: 1em;
+  font-size: .9em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -143,7 +143,7 @@ li {
 
 .chats-list {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .chat {
@@ -152,6 +152,7 @@ li {
   margin: 10px;
   padding: 10px 15px;
   width: fit-content;
+  max-width: 60%;
 }
 
 .chat-id {

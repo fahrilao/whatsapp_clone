@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useContactActive } from '../context/ContactActiveProvider'
 
 export const FormContact = () => {
+  console.log('Rendering Component Form Contact...')
   const { setIdActive } = useContactActive()
   const inputId = useRef<HTMLInputElement>(null)
 

@@ -17,7 +17,6 @@ export const useLocalStorage = <T, >(key: string, initialValue: T | null = null)
   })
 
   useEffect(() => {
-    console.log(value)
     localStorage.setItem(prefixedKey, JSON.stringify(value))
   }, [prefixedKey, value])
 

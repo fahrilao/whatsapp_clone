@@ -1,11 +1,11 @@
 import React, { Dispatch, FC, SetStateAction, useContext } from 'react'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 
-interface ContactInterface {
+export interface ContactInterface {
   [key: string] : {
     id: string
     last_message: string
-    last_time_message: string
+    last_time_message: number
   }
 }
 

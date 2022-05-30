@@ -7,6 +7,8 @@ export interface LoginProps {
 export const Login: FC<LoginProps> = ({ onSubmit }) => {
   const inputId = useRef<HTMLInputElement>(null)
 
+  console.log('Rendering Login...')
+
   const onSubmitForm = (e: any) => {
     e.preventDefault()
 
