@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ContactActiveProvider } from './context/ContactActiveProvider';
+import { ContactProvider } from './context/ContactProvider';
+import { MessagesProvider } from './context/MessagesProvider';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
 
 function App() {
+  const [id, setId] = useLocalStorage<string>('Id')
+
+  const onLogout = () => {
+    setId("")
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    id ?
+      <ContactProvider>
+        <ContactActiveProvider>
+          <MessagesProvider>
+            <Home id={id} onLogout={onLogout} />
+          </MessagesProvider>
+        </ContactActiveProvider>
+      </ContactProvider>
+    : <Login onSubmit={setId} />
   );
 }
 
