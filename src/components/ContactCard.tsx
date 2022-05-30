@@ -4,7 +4,6 @@ import { useContact } from '../context/ContactProvider'
 import { convertEpoch } from '../libraries/datetime'
 
 export const ContactCard = React.memo(() => {
-  console.log('Rendering Component Contact Card...')
   const { setIdActive } = useContactActive()
   const { contacts } = useContact()
 

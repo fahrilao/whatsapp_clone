@@ -11,7 +11,6 @@ interface MainProps {
 }
 
 export const Main: FC<MainProps> = React.memo(({ id }) => {
-  console.log('Rendering Component Main...')
   const [received, setReceived] = useState<MessageInterface[]>([])
   const { messages, setMessage } = useMessages()
   const { idActive } = useContactActive()
@@ -50,15 +49,8 @@ export const Main: FC<MainProps> = React.memo(({ id }) => {
   }, [idActive])
 
   useEffect(() => {
-    console.log('socket connect')
-
     if (socket == null) return
-    socket.on("connect", () => {
-      console.log(socket.id);
-    });
-
     socket.on("receiving_message", (payload: MessageInterface) => {
-      console.log('receiving_message')
       setMessage(prev => [
         ...prev,
         {
@@ -78,13 +70,7 @@ export const Main: FC<MainProps> = React.memo(({ id }) => {
     })
 
     return () => {
-      socket.off('connect', () => {
-        console.log('socket off')
-      })
-
-      socket.off('receiving_message', () => {
-        console.log('socket off')
-      })
+      socket.off('receiving_message', () => null)
     }
   }, [socket])
 

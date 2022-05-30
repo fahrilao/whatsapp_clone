@@ -5,8 +5,6 @@ interface FormChatProps {
 }
 
 export const FormChat: FC<FormChatProps> = React.memo(({ onSubmit }) => {
-  console.log('Rendering Component Form Chat...')
-
   const messageInput = useRef<HTMLInputElement>(null)
   
   const onFromSubmit = (e: any) => {

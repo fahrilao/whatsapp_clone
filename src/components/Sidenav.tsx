@@ -8,8 +8,6 @@ interface SidenavProps {
 }
 
 export const Sidenav: FC<SidenavProps> = React.memo(({ id, onLogout }) => {
-  console.log('Rendering Component Side Nav...')
-
   return (
     <div className="sidenav">
       <FormContact />

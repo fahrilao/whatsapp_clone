@@ -18,8 +18,6 @@ io.on("connection", (socket) => {
   const id = socket.handshake.query.id
   
   socket.join(id)
-  console.log(socket.id)
-
   socket.on('send_message', payload => {
     socket.broadcast.to([payload.id]).emit('receiving_message', payload)
   })

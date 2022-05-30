@@ -10,8 +10,6 @@ import { Login } from './pages/Login';
 function App() {
   const [id, setId] = useLocalStorage<string>('Id')
 
-  console.log('Rendering App...')
-
   const onLogout = useCallback(() => {
     setId("")
   }, [])

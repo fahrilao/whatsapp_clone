@@ -6,7 +6,6 @@ interface UserInfoProps {
 }
 
 export const UserInfo: FC<UserInfoProps> = React.memo(({ id, onClickLogout }) => {
-  console.log('Rendering Component User Info...')
   return (
     <div className="user_info">
       My id's {id}
